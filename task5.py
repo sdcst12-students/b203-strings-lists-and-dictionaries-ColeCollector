@@ -36,3 +36,36 @@ You have:
  3 wood
  >
 """
+
+
+inv = {}
+items = {"food" : "fod", "water": "war", "rope" : "roe", "torch" : "tor", "sack" : "sak", "wood" : "wod", "iron": "irn","steel" : "stl","ginger" : "gir","garlic": "gac","fish" : " fih","stone" : "ste","wool" : "wol"}
+
+while True:
+    action = input("What would you like to do?\n")
+    action = action.split(" ")
+    if action[0] == "get":
+        if action[-1] in items:
+            if len(action)== 3:
+                inv[items[action[-1]]]=action[1]
+            else:
+                inv[items[action[1]]] = 1
+        else:
+            print("That's not an item")
+
+    elif action[0] == "drop":
+        if action[-1] in items:
+            for i in inv:
+                if i == items[action[-1]]:
+                    inv.pop(items[action[-1]])
+                    break
+        else:
+            print("That's not an item")
+
+    elif action[0] == "inventory":
+        print("You have:\n")
+        for i in inv:
+            for j in items:
+                if items[j] == i
+
+            print(inv[i],i)

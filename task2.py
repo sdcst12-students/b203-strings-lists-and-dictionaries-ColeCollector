@@ -6,6 +6,10 @@ use a for loop to iterate through all possible integers to find the factors of 2
 def main():
     factors = []
     myNumber = 24
+    for i in range(1,myNumber+1):
+        if myNumber%i == 0:
+            factors.append(i)
+    print(factors)
 
 
 if __name__ == "__main__":
