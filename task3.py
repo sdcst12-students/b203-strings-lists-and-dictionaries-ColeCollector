@@ -8,11 +8,17 @@ Write a python script display the values of the dictionary
 (3 points)
 """
 sortMe = {1: -2, 2: 6, 4: 0, 6: 1, 9: 2, 10: 3, 11: 0, 13: 3, 14: 4, 15: -2, 17: 0, 18: -1, 20: 3}
-sort1 = []
-sort2 = []
+keys = []
+values = []
 
-for j in range(5):
-  for i in sortMe:
-      if i.find(f"{j}") >=0:
-         sort1.append(sortMe[i])
-print(sort1)
+for i in sortMe:
+    values.append(sortMe[i])
+values.sort()
+
+for i in sortMe:
+    keys.append(i)
+
+keys.sort(reverse=True)
+
+print(values)
+print(keys)
